@@ -1,3 +1,6 @@
+/**
+ * Add Place search
+ */
 if (document.getElementById('user_input_autocomplete_address')) {
     /**
      * init autocomplete for add place view
@@ -42,7 +45,9 @@ if (document.getElementById('user_input_autocomplete_address')) {
     });
 }
 
-
+/**
+ * Home search
+ */
 if (document.getElementById('homeSearch')) {
     /**
      * init autocomplete for home view search
@@ -88,7 +93,6 @@ if (document.getElementById('homeSearch')) {
     });
 }
 
-
 /**
  * Geolocation
  */
@@ -110,3 +114,212 @@ if (document.getElementById('homeGeolocate')) {
     }
 }
 
+/**
+ * MAP : Home search & Geolocation
+ */
+if (document.getElementById('map')) {
+    function initMap() {
+        /**
+         * Custom map style
+         * @type {google.maps.StyledMapType}
+         */
+        var styledMapType = new google.maps.StyledMapType(
+            [
+                {
+                    "featureType": "all",
+                    "elementType": "labels.text.fill",
+                    "stylers": [
+                        {
+                            "saturation": 36
+                        },
+                        {
+                            "color": "#333333"
+                        },
+                        {
+                            "lightness": 40
+                        }
+                    ]
+                },
+                {
+                    "featureType": "all",
+                    "elementType": "labels.text.stroke",
+                    "stylers": [
+                        {
+                            "visibility": "on"
+                        },
+                        {
+                            "color": "#ffffff"
+                        },
+                        {
+                            "lightness": 16
+                        }
+                    ]
+                },
+                {
+                    "featureType": "all",
+                    "elementType": "labels.icon",
+                    "stylers": [
+                        {
+                            "visibility": "off"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "administrative",
+                    "elementType": "geometry.fill",
+                    "stylers": [
+                        {
+                            "color": "#fefefe"
+                        },
+                        {
+                            "lightness": 20
+                        }
+                    ]
+                },
+                {
+                    "featureType": "administrative",
+                    "elementType": "geometry.stroke",
+                    "stylers": [
+                        {
+                            "color": "#fefefe"
+                        },
+                        {
+                            "lightness": 17
+                        },
+                        {
+                            "weight": 1.2
+                        }
+                    ]
+                },
+                {
+                    "featureType": "landscape",
+                    "elementType": "geometry",
+                    "stylers": [
+                        {
+                            "color": "#f5f5f5"
+                        },
+                        {
+                            "lightness": 20
+                        }
+                    ]
+                },
+                {
+                    "featureType": "poi",
+                    "elementType": "geometry",
+                    "stylers": [
+                        {
+                            "color": "#f5f5f5"
+                        },
+                        {
+                            "lightness": 21
+                        }
+                    ]
+                },
+                {
+                    "featureType": "poi.park",
+                    "elementType": "geometry",
+                    "stylers": [
+                        {
+                            "color": "#dedede"
+                        },
+                        {
+                            "lightness": 21
+                        }
+                    ]
+                },
+                {
+                    "featureType": "road.highway",
+                    "elementType": "geometry.fill",
+                    "stylers": [
+                        {
+                            "color": "#ffffff"
+                        },
+                        {
+                            "lightness": 17
+                        }
+                    ]
+                },
+                {
+                    "featureType": "road.highway",
+                    "elementType": "geometry.stroke",
+                    "stylers": [
+                        {
+                            "color": "#ffffff"
+                        },
+                        {
+                            "lightness": 29
+                        },
+                        {
+                            "weight": 0.2
+                        }
+                    ]
+                },
+                {
+                    "featureType": "road.arterial",
+                    "elementType": "geometry",
+                    "stylers": [
+                        {
+                            "color": "#ffffff"
+                        },
+                        {
+                            "lightness": 18
+                        }
+                    ]
+                },
+                {
+                    "featureType": "road.local",
+                    "elementType": "geometry",
+                    "stylers": [
+                        {
+                            "color": "#ffffff"
+                        },
+                        {
+                            "lightness": 16
+                        }
+                    ]
+                },
+                {
+                    "featureType": "transit",
+                    "elementType": "geometry",
+                    "stylers": [
+                        {
+                            "color": "#f2f2f2"
+                        },
+                        {
+                            "lightness": 19
+                        }
+                    ]
+                },
+                {
+                    "featureType": "water",
+                    "elementType": "geometry",
+                    "stylers": [
+                        {
+                            "color": "#e9e9e9"
+                        },
+                        {
+                            "lightness": 17
+                        }
+                    ]
+                }
+            ],
+            {name: 'ecofind-map'}
+        );
+
+        /**
+         * Declare map
+         * @type {google.maps.Map}
+         */
+        var map = new google.maps.Map(document.getElementById('map'), {
+            center: {lat: 48.856614, lng: 2.3522219},
+            zoom: 7,
+            mapTypeId: 'roadmap',
+            mapTypeControl: false,
+            streetViewControl: false,
+            fullscreenControl: false
+        });
+
+        map.mapTypes.set('styled_map', styledMapType);
+        map.setMapTypeId('styled_map');
+    }
+}
