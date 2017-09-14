@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('maps-api')
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAp0YwuMWioEzFiKeAV5XOy3LhicJQfC3I&libraries=places&sensor=true"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAp0YwuMWioEzFiKeAV5XOy3LhicJQfC3I&libraries=places&sensor=true" data-turbolinks-eval="false" data-turbolinks-track="reload"></script>
 @stop
 
 @section('navbar')

@@ -1,5 +1,9 @@
 @extends('layouts.app')
-@section('title', 'Place show')
+
+@section('navbar')
+    @include('layouts.navbar')
+@endsection
+
 @section('content')
     <div>
         <div>
@@ -28,4 +32,8 @@
         </div>
     @endforeach
 
+@endsection
+
+@section('footer')
+    @include('layouts.footer')
 @endsection

@@ -2,154 +2,136 @@
 @section('title', 'Ajouter place')
 
 @section('maps-api')
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAp0YwuMWioEzFiKeAV5XOy3LhicJQfC3I&libraries=places&sensor=true"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAp0YwuMWioEzFiKeAV5XOy3LhicJQfC3I&libraries=places&sensor=true" data-turbolinks-eval="false" data-turbolinks-track="reload"></script>
 @stop
 
+@section('navbar')
+    @include('layouts.navbar')
+@endsection
+
 @section('content')
-    <div>
-        <div>
+    <section class="hero is-primary is-fullheight">
+        <div class="hero-body">
+            <div class="card">
+                <form method="post">
+                <header class="card-header has-text-centered">
+                    <p class="card-header-title has-text-centered">
+                        + Ajouter un lieu
+                    </p>
+                </header>
+                <div class="card-content">
 
-            <form method="post">
 
-                @foreach ($errors->all() as $error)
-                    <p>{{ $error }}</p>
-                @endforeach
+                        @foreach ($errors->all() as $error)
+                            <p>{{ $error }}</p>
+                        @endforeach
 
-                @if (session('status'))
-                    <div>
-                        {{ session('status') }}
-                    </div>
-                @endif
-
-                <input type="hidden" name="_token" value="{!! csrf_token() !!}">
-
-                <fieldset>
-                    <legend>Ajouter place</legend>
-
-                    <div>
-                        <label for="name">Nom du lieu</label>
-                        <div>
-                            <input type="text" id="name" name="name">
-                        </div>
-                    </div>
-
-                    <br>
-
-                    <label for="cost">
-                        <input type="radio" name="cost" id="cost" value="1"> €
-                        <input type="radio" name="cost" id="cost" value="2"> €€
-                        <input type="radio" name="cost" id="cost" value="3"> €€€
-                    </label>
-
-                    <br><br>
-
-                     <div >
-                        <label>Address</label>
-                        <div>
-                            <input id="user_input_autocomplete_address" name="address">
-                        </div>
-                     </div>
-
-                        <div>
+                        @if (session('status'))
                             <div>
-                                <input id="street_number" name="street_number"  type="hidden">
+                                {{ session('status') }}
                             </div>
-                        </div>
-                        <div>
-                            <div>
-                                <input id="route" name="route"  type="hidden">
-                            </div>
-                        </div>
-                        <div>
-                            <div>
-                                <input id="locality" name="locality"  type="hidden">
-                            </div>
-                        </div>
-                        <div>
-                            <div>
-                                <input id="administrative_area_level_1" name="administrative_area_level_1" type="hidden">
-                            </div>
-                        </div>
-                        <div>
-                            <div>
-                                <input id="administrative_area_level_2" name="administrative_area_level_2" type="hidden" >
-                            </div>
-                        </div>
-                        <div>
-                            <div>
-                                <input id="postal_code" name="postal_code" type="hidden">
-                            </div>
-                        </div>
-                        <div>
-                            <div>
-                                <input id="country" name="country"  type="hidden">
-                            </div>
-                        </div>
+                        @endif
 
+                        <input type="hidden" name="_token" value="{!! csrf_token() !!}">
 
-                    <br>
-                    <label class="inline">
-                        <input type="radio" name="type" id="type" value="restaurant"> Restaurant
+                            <div class="field">
+                                <div class="control">
+                                    <input class="input" type="text" id="name" name="name" placeholder="Nom du lieu">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label class="label">Echelle de prix :</label>
+                                <div class="control">
+                                    <label class="radio" for="cost">
+                                        <input type="radio" name="cost" id="cost" value="1">
+                                        €
+                                    </label>
+                                    <label class="radio" for="cost">
+                                        <input type="radio" name="cost" id="cost" value="2">
+                                        €€
+                                    </label>
+                                    <label class="radio" for="cost">
+                                        <input type="radio" name="cost" id="cost" value="3">
+                                        €€€
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <div class="control">
+                                    <input class="input" type="text" id="user_input_autocomplete_address" name="address" placeholder="Adresse">
+                                </div>
+                            </div>
+                            <div>
+                                <div>
+                                    <input id="street_number" name="street_number"  type="hidden">
+                                </div>
+                            </div>
+                            <div>
+                                <div>
+                                    <input id="route" name="route"  type="hidden">
+                                </div>
+                            </div>
+                            <div>
+                                <div>
+                                    <input id="locality" name="locality"  type="hidden">
+                                </div>
+                            </div>
+                            <div>
+                                <div>
+                                    <input id="administrative_area_level_1" name="administrative_area_level_1" type="hidden">
+                                </div>
+                            </div>
+                            <div>
+                                <div>
+                                    <input id="administrative_area_level_2" name="administrative_area_level_2" type="hidden" >
+                                </div>
+                            </div>
+                            <div>
+                                <div>
+                                    <input id="postal_code" name="postal_code" type="hidden">
+                                </div>
+                            </div>
+                            <div>
+                                <div>
+                                    <input id="country" name="country"  type="hidden">
+                                </div>
+                            </div>
 
-                        <input type="radio" name="type" id="type" value="vetement"> Vêtement
+                            <div class="field">
+                                <label class="label">Type de lieu :</label>
+                                <div class="control">
+                                    <label class="radio" for="type">
+                                        <input type="radio" name="type" id="type" value="restaurant">
+                                        Restaurant
+                                    </label>
+                                    <label class="radio" for="type">
+                                        <input type="radio" name="type" id="type" value="vetement">
+                                        Magasin de vêtements
+                                    </label>
+                                    <label class="radio" for="type">
+                                        <input type="radio" name="type" id="type" value="alimentaire">
+                                        Magasin alimentaire
+                                    </label>
+                                </div>
+                            </div>
 
-                        <input type="radio" name="type" id="type" value="alimentaire"> Alimentaire
-                    </label>
-                    <br><br>
-                    <div >
-                        <label>Description du lieu</label>
-                        <div>
-                            <textarea rows="3" id="description" name="description"></textarea>
-                        </div>
-                    </div>
+                            <div class="field">
+                                <div class="control">
+                                    <textarea class="textarea" type="text" id="description" name="description" placeholder="Courte description du lieu"></textarea>
+                                </div>
+                            </div>
+                            <div class="is-centered">{!! app('captcha')->display(); !!}</div>
 
-                    <div>
-                        <div>
-                            <button type="reset">Cancel</button>
-                            <button type="submit">Submit</button>
-                        </div>
-                    </div>
-                </fieldset>
+                </div>
+                <footer class="has-text-centered">
+                    <button class=" button is-medium is-primary is-inverted" type="submit">Valider l'ajout</button>
+                </footer>
             </form>
+            </div>
         </div>
-    </div>
+    </section>
+    <style> @media screen and (max-height: 575px){ #rc-imageselect, .g-recaptcha {transform:scale(0.77);-webkit-transform:scale(0.77);transform-origin:0 0;-webkit-transform-origin:0 0;} } </style>
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAp0YwuMWioEzFiKeAV5XOy3LhicJQfC3I&libraries=places"></script>
-
-
-        <script>
-        function initializeAutocomplete(id) {
-            var element = document.getElementById(id);
-            var options = {
-                types: ['geocode'],
-                componentRestrictions: {country: "fr"}
-            };
-            if (element) {
-                var autocomplete = new google.maps.places.Autocomplete(element, options);
-                google.maps.event.addListener(autocomplete, 'place_changed', onPlaceChanged);
-            }
-        }
-
-        function onPlaceChanged() {
-            var place = this.getPlace();
-
-            // console.log(place);  // Uncomment this line to view the full object returned by Google API.
-
-            for (var i in place.address_components) {
-                var component = place.address_components[i];
-                for (var j in component.types) {  // Some types are ["country", "political"]
-                    var type_element = document.getElementById(component.types[j]);
-                    if (type_element) {
-                        type_element.value = component.long_name;
-                    }
-                }
-            }
-        }
-
-        google.maps.event.addDomListener(window, 'load', function() {
-            initializeAutocomplete('user_input_autocomplete_address');
-        });
-    </script>
 @endsection
 
 @section('footer')

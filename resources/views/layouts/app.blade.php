@@ -10,10 +10,12 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
     <script src="{{ asset('js/turbolinks.js') }}"></script>
+
+    @yield('maps-api')
     <!-- Styles -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600" rel="stylesheet">
-    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet" data-turbolinks-permanent>
 </head>
 <body>
     @yield('navbar')
@@ -24,7 +26,6 @@
     @yield('footer')
 
     <!-- Scripts -->
-    @yield('maps-api')
     <script src="{{ asset('js/main.js') }}"></script>
     <script src="{{ asset('js/maps.js') }}"></script>
 

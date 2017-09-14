@@ -5,7 +5,7 @@
 @endsection
 
 @section('maps-api')
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAp0YwuMWioEzFiKeAV5XOy3LhicJQfC3I&callback=initMap" async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAp0YwuMWioEzFiKeAV5XOy3LhicJQfC3I&callback=initMap" data-turbolinks-eval="false" data-turbolinks-track="reload" async defer></script>
     <script>
         function initMap() {
             /**
@@ -237,12 +237,23 @@
                 @endforeach
             ];
 
+            var infoWindow = new google.maps.InfoWindow();
+
             features.forEach(function(feature) {
                 var marker = new google.maps.Marker({
+                    name: feature.name,
                     position: feature.position,
                     icon: icons[feature.type].icon,
                     map: map
                 });
+                (function (marker) {
+                    google.maps.event.addListener(marker, "click", function (e) {
+                        //Wrap the content inside an HTML DIV in order to set height and width of InfoWindow.
+                        infoWindow.setContent("<h1 class=\"title\">" + marker.name + "</h1>" +
+                            "<h2 class=\"subtitle\">Subtitle</h2>");
+                        infoWindow.open(map, marker);
+                    });
+                })(marker);
             });
 
             map.mapTypes.set('styled_map', styledMapType);
@@ -252,6 +263,12 @@
 @stop
 
 @section('content')
+
+    <style>
+
+
+
+    </style>
 
             <div id="map"></div>
 

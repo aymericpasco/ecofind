@@ -29,6 +29,7 @@ class PlaceFormRequest extends FormRequest
             'description' => 'required',
             'cost' => 'required',
             'type' => 'required',
+            'g-recaptcha-response' => 'required|captcha'
         ];
     }
 }

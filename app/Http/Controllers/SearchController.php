@@ -12,12 +12,18 @@ class SearchController extends Controller
 
     public function search(Request $request) {
         if ($request->has('administrative_area_level_2')) {
+            $get_locality = $request->get('locality');
+            $locality_json = \GoogleMaps::load('geocoding')->setParam(['address' => $get_locality])->get();
+            $locality_decoded = \GuzzleHttp\json_decode($locality_json, true);
+
+            $lat= $locality_decoded['results'][0]['geometry']['location']['lat'];
+            $lng = $locality_decoded['results'][0]['geometry']['location']['lng'];
+
             $places = Place::search($request->administrative_area_level_2)->get();
-            //var_dump($request->get('administrative_area_level_2'));
         } else {
             return url('/');
         }
-        return view('place.index',compact('places'));
+        return view('place.index',compact('places', 'lat', 'lng'));
     }
 
 

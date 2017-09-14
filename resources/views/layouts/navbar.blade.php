@@ -29,15 +29,18 @@
                     </span>
                     <span>Se connecter</span>
                 </a>
-                @else
-                    <p class="navbar-item">
-                        <img src="https://graph.facebook.com/{!! \Illuminate\Support\Facades\Auth::user()->provider_id !!}/picture?type=small" class=" is-hidden-touch img-circle">
-                        <span class="name-user">{!! \Illuminate\Support\Facades\Auth::user()->name !!}</span>
-                        &nbsp;(<a href="{{ url('/logout') }}">
-                            Déconnexion
-                        </a>)&nbsp;
-                    </p>
-                    @endguest
+            @else
+                <a class="navbar-item" href="{{ action('User\PlaceController@create') }}">
+                    + Ajouter un lieu
+                </a>
+                <p class="navbar-item">
+                    <img src="https://graph.facebook.com/{!! \Illuminate\Support\Facades\Auth::user()->provider_id !!}/picture?type=small" class=" is-hidden-touch img-circle">
+                    <span class="name-user">{!! \Illuminate\Support\Facades\Auth::user()->name !!}</span>
+                    &nbsp;(<a href="{{ url('/logout') }}">
+                        Déconnexion
+                    </a>)&nbsp;
+                </p>
+             @endguest
         </div>
     </div>
 </nav>
