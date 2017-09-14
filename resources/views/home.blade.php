@@ -14,17 +14,16 @@
                         Découvrez des restaurants et magasins éco-responsables,
 
                         <div class="is-centered has-text-centered home-search">
-                            {!! Form::open(['action' => 'SearchController@index', 'method' => 'get']) !!}
-                            <form method="get">
                                 <p class="is-inline-desktop is-block-touch">
-                                    <a class="button is-primary is-inverted is-outlined is-medium">Près de chez vous</a>
+                                    <a class="button is-primary is-inverted is-outlined is-medium" href="{{ url('/geolocate') }}">Près de chez vous</a>
                                 </p>
+                            {!! Form::open(['action' => 'SearchController@search', 'method' => 'get', 'id' => 'homeSearch', 'class' => 'is-inline-desktop']) !!}
                                 <p class="is-inline-desktop is-block-touch is-size-5-touch"> ou </p>
-                                <p class="is-inline-desktop is-block-touch">
-                                    <input id="home_search" class="input is-medium search-bar-home" type="text" placeholder="Recherchez par ville...">
+                                <p class=" is-inline-desktop is-block-touch has-icons-right">
+                                    <input id="home_search" class="input is-medium search-bar-home" type="text" placeholder="Recherchez par ville, ...">
                                     <input id="administrative_area_level_2" name="administrative_area_level_2" type="hidden" >
+                                    <input id="locality" name="locality" type="hidden" >
                                 </p>
-                            </form>
                             {!! Form::close() !!}
                         </div>
                     </h1>

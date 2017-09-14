@@ -13,6 +13,10 @@
 
 Route::get('/', 'HomeController@home');
 
+Route::get('/geolocate', function() {
+    return view('place.geolocate');
+});
+
 //Auth::routes();
 
 Route::get('auth/{provider}', 'Auth\AuthController@redirectToProvider');
@@ -29,7 +33,10 @@ Route::post('place/{slug?}/review/add', 'User\ReviewController@store');
 //Route::get('place/{id?}/edit', 'User\PlaceController@edit');
 //Route::post('place/{id?}/edit','User\PlaceController@update');
 
-Route::get('places', 'SearchController@index');
+Route::get('search/places', 'SearchController@search');
+Route::get('geolocate/places', 'SearchController@geolocate');
+
+
 Route::get('place/{slug?}', 'PlaceController@show');
 
 //Route::get('place/{id?}/review/add', 'User\PlaceController@create');

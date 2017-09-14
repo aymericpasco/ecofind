@@ -9095,4 +9095,28 @@ figure.image img {
   padding-left: 1.5rem;
 }
 
+.pac-container {
+  font-family: "Raleway", sans-serif;
+  margin-top: 5px;
+}
+
+.pac-icon {
+  visibility: hidden;
+}
+
+.pac-item {
+  line-height: 40px;
+  font-size: 13px;
+  height: 40px;
+  vertical-align: middle;
+}
+
+.hdpi.pac-logo:after {
+  background-image: none;
+}
+
+.pac-logo:after {
+  height: 0px;
+}
+
 /*# sourceMappingURL=style.css.map */
