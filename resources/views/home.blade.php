@@ -4,6 +4,10 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAp0YwuMWioEzFiKeAV5XOy3LhicJQfC3I&libraries=places&sensor=true"></script>
 @stop
 
+@section('navbar')
+    @include('layouts.navbar')
+@endsection
+
 @section('content')
     <style>
         .footer {

@@ -1,5 +1,8 @@
 @extends('layouts.app')
 
+@section('navbar')
+    @include('layouts.navbar')
+@endsection
 
 @section('maps-api')
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAp0YwuMWioEzFiKeAV5XOy3LhicJQfC3I&callback=initMap" async defer></script>

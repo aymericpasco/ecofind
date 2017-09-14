@@ -9,9 +9,12 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
+    <script src="{{ asset('js/turbolinks.js') }}"></script>
 
 </head>
 <body>
+
+@yield('navbar')
 
 @yield('content')
 
