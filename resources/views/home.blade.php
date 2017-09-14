@@ -24,5 +24,9 @@
                 </div>
             </div>
         </section>
+
+        <div class="container">
+            <div class="home-columns"></div>
+        </div>
     </div>
 @endsection
