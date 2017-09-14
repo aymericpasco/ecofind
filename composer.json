@@ -7,13 +7,16 @@
     "require": {
         "php": ">=7.0.0",
         "alexpechkarev/google-maps": "1.0.8",
+        "algolia/algoliasearch-client-php": "^1.20",
         "anhskohbo/no-captcha": "^2.4",
         "cviebrock/eloquent-sluggable": "^4.3",
         "fideloper/proxy": "~3.3",
         "illuminate/support": "^5.5",
         "laravel/framework": "5.5.*",
+        "laravel/scout": "^3.0",
         "laravel/socialite": "^3.0",
-        "laravel/tinker": "~1.0"
+        "laravel/tinker": "~1.0",
+        "laravelcollective/html": "^5.5"
     },
     "require-dev": {
         "filp/whoops": "~2.0",

@@ -19,6 +19,7 @@ class CreatePlacesTable extends Migration
             $table->string('slug');
             $table->string('address');
             $table->string('department');
+            $table->string('city');
             $table->double('lat', 10,6);
             $table->double('lng', 10,6);
             $table->text('description');

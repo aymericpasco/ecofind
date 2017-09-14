@@ -4,11 +4,18 @@ namespace App;
 
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Model;
+use Laravel\Scout\Searchable;
 
 class Place extends Model
 {
 
     use Sluggable;
+    use Searchable;
+
+//    public function searchableAs()
+//    {
+//        return 'id';
+//    }
 
     public function sluggable()
     {
@@ -20,7 +27,7 @@ class Place extends Model
     }
 
     protected $fillable = [
-        'name', 'address', 'department', 'lat', 'lng', 'description', 'cost', 'type', 'user_id',
+        'name', 'address', 'department', 'city', 'lat', 'lng', 'description', 'cost', 'type', 'user_id',
     ];
 
     public function reviews() {

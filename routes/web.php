@@ -29,7 +29,7 @@ Route::post('place/{slug?}/review/add', 'User\ReviewController@store');
 //Route::get('place/{id?}/edit', 'User\PlaceController@edit');
 //Route::post('place/{id?}/edit','User\PlaceController@update');
 
-//Route::get('places', 'PlaceController@index');
+Route::get('places', 'SearchController@index');
 Route::get('place/{slug?}', 'PlaceController@show');
 
 //Route::get('place/{id?}/review/add', 'User\PlaceController@create');

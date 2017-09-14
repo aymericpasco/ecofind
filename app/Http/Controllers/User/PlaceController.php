@@ -29,6 +29,7 @@ class PlaceController extends Controller
     {
         $user_id = Auth::user()->id;
         $department = $request->get('administrative_area_level_2');
+        $city = $request->get('locality');
         $address =  $request->get('street_number') . ' ' .
                     $request->get('route') . ', ' .
                     $request->get('locality') . ', ' .
@@ -44,6 +45,7 @@ class PlaceController extends Controller
             'name' => $request->get('name'),
             'address' => $address,
             'department' => $department,
+            'city' => $city,
             'lat' => $lat,
             'lng' => $lng,
             'description' => $request->get('description'),

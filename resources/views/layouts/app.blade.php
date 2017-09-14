@@ -18,7 +18,7 @@
 <body>
 <nav class="navbar container">
     <div class="navbar-brand">
-        <a class="navbar-item logo" href="#">
+        <a class="navbar-item logo" href="{{ url('/') }}">
             <img src="{{ asset('img/leaf.png') }}" alt="Bulma: a modern CSS framework based on Flexbox" >
             Ecofind
         </a>
@@ -62,7 +62,24 @@
 
         @yield('content')
 
+
+<footer class="footer">
+    <div class="container">
+        <div class="content has-text-centered">
+            <p>
+                &copy; <strong>{{ config('app.name', 'Laravel') }}</strong><i>, un projet <a href="http://www.epsi.fr/" target="_blank">EPSI Lille</a></i>
+            </p>
+            <p>
+                <img src="{{ asset('img/epsilogo.png') }}" style="max-width: 30px">
+            </p>
+        </div>
+    </div>
+</footer>
+
     <!-- Scripts -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAp0YwuMWioEzFiKeAV5XOy3LhicJQfC3I&libraries=places"></script>
     <script src="{{ asset('js/main.js') }}"></script>
+    <script src="{{ asset('js/maps.js') }}"></script>
+
 </body>
 </html>
