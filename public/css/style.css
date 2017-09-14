@@ -9041,12 +9041,38 @@ a.navbar-item.logo {
   background-color: transparent;
 }
 
-.discover {
+.discover, .name-user {
   font-weight: 600;
 }
 
 body {
   font-weight: 300;
+}
+
+.home.title {
+  font-weight: 200;
+}
+
+.home-page .button, .home-page .input {
+  border-radius: 50px;
+}
+
+.home-page .input {
+  border: 0px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.home-search {
+  margin-top: 20px;
+}
+
+.search-bar-home {
+  max-width: 500px;
+}
+
+.img-circle {
+  border-radius: 50%;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -41,16 +41,20 @@
         </div>
         <div class="navbar-end">
             @guest
-                <a class="navbar-item is-hidden-desktop-only" href="{{ url('/auth/facebook') }}">
+                <a class="navbar-item" href="{{ url('/auth/facebook') }}">
                 <span class="icon" style="color: #00d1b2;">
                   <i class="fa fa-facebook"></i>
                 </span>
-                    <span>Login</span>
+                    <span>Se connecter</span>
                 </a>
             @else
-                <a class="navbar-item is-hidden-desktop-only" href="{{ url('/logout') }}">
-                    <span>Logout</span>
-                </a>
+                <p class="navbar-item">
+                    <img src="https://graph.facebook.com/{!! \Illuminate\Support\Facades\Auth::user()->provider_id !!}/picture?type=small" class=" is-hidden-touch img-circle">
+                    <span class="name-user">{!! \Illuminate\Support\Facades\Auth::user()->name !!}</span>
+                    &nbsp;(<a href="{{ url('/logout') }}">
+                        Déconnexion
+                    </a>)&nbsp;
+                </p>
             @endguest
         </div>
     </div>
@@ -59,6 +63,6 @@
         @yield('content')
 
     <!-- Scripts -->
-    <script src="{{ asset('') }}"></script>
+    <script src="{{ asset('js/main.js') }}"></script>
 </body>
 </html>

@@ -14,9 +14,10 @@ class PlaceController extends Controller
     }
 
 
-
-
-
+    /**
+     * @param $slug
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function show($slug)
     {
         $place = Place::whereSlug($slug)->firstOrFail();
