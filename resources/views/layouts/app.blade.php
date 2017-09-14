@@ -32,7 +32,7 @@
 
     <div id="navMenu" class="navbar-menu">
         <div class="navbar-start">
-            <a class="navbar-item discover" href="#">
+            <a class="navbar-item discover" href="{{ url('/') }}">
                 Découvrez
             </a>
             <a class="navbar-item" href="#">
@@ -67,7 +67,7 @@
     <div class="container">
         <div class="content has-text-centered">
             <p>
-                &copy; <strong>{{ config('app.name', 'Laravel') }}</strong><i>, un projet <a href="http://www.epsi.fr/" target="_blank">EPSI Lille</a></i>
+                &copy; <strong>{{ config('app.name', 'Laravel') }}</strong><i>, une application <a href="http://www.epsi.fr/" target="_blank">EPSI Lille</a></i>
             </p>
             <p>
                 <img src="{{ asset('img/epsilogo.png') }}" style="max-width: 30px">
