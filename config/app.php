@@ -172,7 +172,7 @@ return [
         GoogleMaps\ServiceProvider\GoogleMapsServiceProvider::class,
         Laravel\Scout\ScoutServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
-
+        Frenzy\Turbolinks\TurbolinksServiceProvider::class,
 
 
         /*

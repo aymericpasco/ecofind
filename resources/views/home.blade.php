@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('maps-api')
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAp0YwuMWioEzFiKeAV5XOy3LhicJQfC3I&libraries=places&sensor=true"></script>
+@stop
+
 @section('content')
     <style>
         .footer {
@@ -53,4 +57,8 @@
             </div>
         </section>
     </div>
+@endsection
+
+@section('footer')
+    @include('layouts.footer')
 @endsection

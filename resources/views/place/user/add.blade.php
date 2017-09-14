@@ -1,6 +1,10 @@
 @extends('layouts.app')
 @section('title', 'Ajouter place')
 
+@section('maps-api')
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAp0YwuMWioEzFiKeAV5XOy3LhicJQfC3I&libraries=places&sensor=true"></script>
+@stop
+
 @section('content')
     <div>
         <div>
@@ -146,4 +150,8 @@
             initializeAutocomplete('user_input_autocomplete_address');
         });
     </script>
+@endsection
+
+@section('footer')
+    @include('layouts.footer')
 @endsection

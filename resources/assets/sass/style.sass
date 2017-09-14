@@ -1,3 +1,23 @@
+/*!                                                     */
+/*!    _______  _______  _______ _________              */
+/*!    (  ____ \(  ____ )(  ____ \\__   __/             */
+/*!    | (    \/| (    )|| (    \/   ) (                */
+/*!    | (__    | (____)|| (_____    | |                */
+/*!    |  __)   |  _____)(_____  )   | |                */
+/*!    | (      | (            ) |   | |                */
+/*!    | (____/\| )      /\____) |___) (___             */
+/*!    (_______/|/       \_______)\_______/             */
+/*!                                                     */
+/*!    _       _________ _        _        _______      */
+/*!    ( \      \__   __/( \      ( \      (  ____ \    */
+/*!    | (         ) (   | (      | (      | (    \/    */
+/*!    | |         | |   | |      | |      | (__        */
+/*!    | |         | |   | |      | |      |  __)       */
+/*!    | |         | |   | |      | |      | (          */
+/*!    | (____/\___) (___| (____/\| (____/\| (____/\    */
+/*!    (_______/\_______/(_______/(_______/(_______/    */
+/*!                                                     */
+
 @import '../../../node_modules/bulma/sass/utilities/initial-variables'
 
 // Raleway font
@@ -27,6 +47,11 @@ a.navbar-item.logo
 
 body
   font-weight: 300
+
+html, body
+  height: 100%
+  margin: 0
+  padding: 0
 
 .home.title, .title
   font-weight: 200
@@ -64,6 +89,9 @@ figure.image img
   padding-right: 1.5rem
   padding-bottom: 2.5rem
   padding-left: 1.5rem
+  top: -webkit-calc(100% - 54.400px)
+  top:    -moz-calc(100% - 54.400px)
+  top:         calc(100% - 54.400px)
 
 // Google maps CSS edit
 .pac-container
@@ -84,3 +112,10 @@ figure.image img
 
 .pac-logo:after
   height: 0px
+
+#map
+  height: -webkit-calc(100% - 54.400px)
+  height:    -moz-calc(100% - 54.400px)
+  height:         calc(100% - 54.400px)
+
+

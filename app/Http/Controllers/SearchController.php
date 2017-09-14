@@ -38,7 +38,7 @@ class SearchController extends Controller
         } else {
             return url('/');
         }
-        return view('place.index',compact('places'));
+        return view('place.index',compact('places', 'lat', 'lng'));
     }
 
 }

@@ -1,3 +1,22 @@
+/*!                                                     */
+/*!    _______  _______  _______ _________              */
+/*!    (  ____ \(  ____ )(  ____ \\__   __/             */
+/*!    | (    \/| (    )|| (    \/   ) (                */
+/*!    | (__    | (____)|| (_____    | |                */
+/*!    |  __)   |  _____)(_____  )   | |                */
+/*!    | (      | (            ) |   | |                */
+/*!    | (____/\| )      /\____) |___) (___             */
+/*!    (_______/|/       \_______)\_______/             */
+/*!                                                     */
+/*!    _       _________ _        _        _______      */
+/*!    ( \      \__   __/( \      ( \      (  ____ \    */
+/*!    | (         ) (   | (      | (      | (    \/    */
+/*!    | |         | |   | |      | |      | (__        */
+/*!    | |         | |   | |      | |      |  __)       */
+/*!    | |         | |   | |      | |      | (          */
+/*!    | (____/\___) (___| (____/\| (____/\| (____/\    */
+/*!    (_______/\_______/(_______/(_______/(_______/    */
+/*!                                                     */
 @import url("https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600");
 /*! bulma.io v0.5.2 | MIT License | github.com/jgthms/bulma */
 @keyframes spinAround {
@@ -9049,6 +9068,12 @@ body {
   font-weight: 300;
 }
 
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 .home.title, .title {
   font-weight: 200;
 }
@@ -9093,6 +9118,7 @@ figure.image img {
   padding-right: 1.5rem;
   padding-bottom: 2.5rem;
   padding-left: 1.5rem;
+  top: calc(100% - 54.400px);
 }
 
 .pac-container {
@@ -9117,6 +9143,10 @@ figure.image img {
 
 .pac-logo:after {
   height: 0px;
+}
+
+#map {
+  height: calc(100% - 54.400px);
 }
 
 /*# sourceMappingURL=style.css.map */
