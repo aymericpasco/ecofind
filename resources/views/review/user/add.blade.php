@@ -43,7 +43,7 @@
                                         </span>
                                     </div>
                                 </div>
-
+                                @if($avg !== NULL)
                                 <div class="control">
                                     <div class="tags has-addons">
                                         <span class="tag">Moyenne</span>
@@ -52,6 +52,7 @@
                                         </span>
                                     </div>
                                 </div>
+                                @endif
                             </div>
                             <div class="content is-hidden-touch">
                                 {!! $place->description !!}

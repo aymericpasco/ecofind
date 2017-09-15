@@ -228,6 +228,7 @@
                 {
                     name: '{!! $place->name !!}',
                     address: '{!! $place->address !!}',
+                    url: '{{ action('PlaceController@show', $place->slug) }}',
                     position: new google.maps.LatLng({!! $place->lat !!}, {!! $place->lng !!}),
                     description: '{!! $place->description !!}',
                     type: '{!! $place->type !!}',
@@ -242,15 +243,29 @@
             features.forEach(function(feature) {
                 var marker = new google.maps.Marker({
                     name: feature.name,
+                    url: feature.url,
+                    address: feature.address,
+                    description: feature.description,
+                    type: feature.type,
                     position: feature.position,
                     icon: icons[feature.type].icon,
                     map: map
                 });
+                if(marker.type === 'restaurant') {
+                    var write_type = 'Restaurant';
+                } else if(marker.type === 'vetement') {
+                    var write_type = 'Magasin de vêtement';
+                } else if(marker.type === 'alimentaire') {
+                    var write_type = 'Magasin alimentaire';
+                }
                 (function (marker) {
                     google.maps.event.addListener(marker, "click", function (e) {
                         //Wrap the content inside an HTML DIV in order to set height and width of InfoWindow.
-                        infoWindow.setContent("<h1 class=\"title\">" + marker.name + "</h1>" +
-                            "<h2 class=\"subtitle\">Subtitle</h2>");
+                        infoWindow.setContent("<h1 class=\"title no-line-height has-text-centered\"><a href="+ marker.url +"> " + marker.name + "</a></h1>" +
+                            "<h2 class=\"subtitle no-line-height has-text-centered\"><i>" + write_type + "</i></h2>" +
+                            "<p class='has-text-centered'><b>" + marker.address + "</b></p><hr>" +
+                            "<p>" + marker.description + "</p><hr>" +
+                            "<p class='has-text-centered'><a href="+ marker.url +">En savoir plus</a></p>");
                         infoWindow.open(map, marker);
                     });
                 })(marker);
@@ -266,7 +281,9 @@
 
     <style>
 
-
+        .gm-style {
+            font-family: Raleway;
+        }
 
     </style>
 
