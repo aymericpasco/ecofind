@@ -4,7 +4,7 @@
 
 ### Description
 
-_Ecofind is a student project of the EPSI Lille allowing its users to discover, add and review eco-responsible restaurants or stores near their home._
+_Ecofind is a student project of EPSI Lille, allowing its users to discover, add and review eco-responsible restaurants or stores near their home._
 
 ### Installation
 - Run `composer install`.
