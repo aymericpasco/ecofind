@@ -43,5 +43,9 @@ class AuthController extends Controller
         ]);
     }
 
+    public function needLogin() {
+        return Redirect::to('auth/facebook');
+    }
+
 
 }

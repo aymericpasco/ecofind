@@ -23,6 +23,8 @@ Route::get('auth/{provider}', 'Auth\AuthController@redirectToProvider');
 Route::get('auth/{provider}/callback', 'Auth\AuthController@handleProviderCallback');
 Route::get('logout', 'Auth\LoginController@logout');
 
+Route::get('login', [ 'as' => 'login', 'uses' => 'Auth\AuthController@needLogin']);
+
 //Route::get('/home', 'HomeController@index')->name('home');
 
 // Custom

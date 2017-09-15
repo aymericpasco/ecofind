@@ -26,6 +26,7 @@ class ReviewFormRequest extends FormRequest
         return [
             'title' => 'required',
             'grade' => 'required',
+            'g-recaptcha-response' => 'required|captcha'
         ];
     }
 }

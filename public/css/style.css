@@ -9134,6 +9134,19 @@ figure.image img {
   margin-right: auto;
 }
 
+section.place {
+  padding-top: 4rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  padding-bottom: 4rem;
+  background-color: #00d1b2;
+  min-height: calc(100vh - 54.400px);
+}
+
+.subtitle {
+  font-weight: 200;
+}
+
 .pac-container {
   font-family: "Raleway", sans-serif;
   margin-top: 5px;
@@ -9156,6 +9169,50 @@ figure.image img {
 
 .pac-logo:after {
   height: 0px;
+}
+
+.place-address {
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.card-place {
+  margin-bottom: 3rem;
+}
+
+i.user-name a {
+  color: #0a0a0a;
+}
+
+footer.card-footer.add-review {
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  width: 100%;
+}
+
+footer.card-footer.add-review form {
+  width: 100%;
+}
+
+.submit-review {
+  margin-top: 15px;
+}
+
+p.title-place a {
+  color: #0a0a0a;
+}
+
+.card-review {
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+figure.media-left {
+  vertical-align: middle;
 }
 
 #map {

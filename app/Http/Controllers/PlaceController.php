@@ -23,8 +23,9 @@ class PlaceController extends Controller
         $place = Place::whereSlug($slug)->firstOrFail();
         $user = $place->user()->get();
         $reviews = $place->reviews()->get();
+        $avg = $reviews->avg('grade');
         // = $reviews->user()->get('name');
-        return view('place.show', compact('place', 'user', 'reviews'));
+        return view('place.show', compact('place', 'user', 'reviews', 'avg'));
     }
 
 
