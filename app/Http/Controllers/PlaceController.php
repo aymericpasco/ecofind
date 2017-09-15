@@ -27,6 +27,5 @@ class PlaceController extends Controller
         // = $reviews->user()->get('name');
         return view('place.show', compact('place', 'user', 'reviews', 'avg'));
     }
-
-
+    
 }
